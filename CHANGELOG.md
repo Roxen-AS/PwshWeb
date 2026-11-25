@@ -8,6 +8,13 @@ All notable changes to PwshWeb will be documented in this file.
 - Added support for additional MIME types: `.wasm`, `.mjs`, `.map`, `.webmanifest`, `.webp`, `.avif`, `.woff`, `.woff2`, `.ttf`, `.otf`, `.csv`, `.ogg`, `.wav`, `.yaml`, `.yml`
 - Added `-MimeType` parameter to `Start-PwshWeb` allowing users to supply custom or override MIME type mappings via hashtable
 
+### Fixed
+- Directory listing links now point at the directory they name
+  - The root listing no longer shows a `..` row that linked back to the root itself
+  - The parent link of a nested directory leads to that directory's parent (`/sub/deeper/` links to `/sub/`) instead of always leading to `/`
+  - A directory requested with a trailing slash no longer produces a doubled separator in the heading or in the links (`/sub//b.txt`)
+  - The header row of the listing table is followed by a newline, so it is no longer glued to the first row
+
 ## [1.0.2] - 2026-02-18
 
 ### Changed
